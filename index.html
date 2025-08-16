@@ -3,23 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Sports & Recreation Center</title>
+    <title>Boxing Academy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #ff6b35;
-            --secondary-color: #2c3e50;
-            --accent-color: #f39c12;
-            --text-color: #333;
-            --light-color: #fff;
-            --dark-color: #1a1a1a;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -28,98 +15,90 @@
         }
         
         body {
-            color: var(--text-color);
-            line-height: 1.6;
+            background: #1a1a1a;
+            color: #fff;
             overflow-x: hidden;
-            background: linear-gradient(45deg, #f0f2f5, #ffffff);
+            line-height: 1.6;
         }
 
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.1;
-            animation: float 20s infinite linear;
-            color: var(--primary-color);
-        }
-
-        .floating-icon:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .floating-icon:nth-child(2) { left: 25%; animation-delay: 3s; }
-        .floating-icon:nth-child(3) { left: 40%; animation-delay: 6s; }
-        .floating-icon:nth-child(4) { left: 55%; animation-delay: 9s; }
-        .floating-icon:nth-child(5) { left: 70%; animation-delay: 12s; }
-        .floating-icon:nth-child(6) { left: 85%; animation-delay: 15s; }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.1; }
-            90% { opacity: 0.1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
-        
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar {
+        .top-bar {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 12px 0;
+            font-size: 13px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+            padding: 12px 5%;
+            box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
         }
-        
+
+        .top-bar-left {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .top-bar-right a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-bar-right a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.8);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-shadow: 0 2px 4px rgba(255,107,53,0.3);
         }
 
         .logo img {
-            height: 100px;
+            height: 60px;
             width: auto;
-            margin-right: 15px;
-            border-radius: 10px;
+            filter: drop-shadow(0 2px 8px rgba(231,76,60,0.5));
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
+            gap: 45px;
+            align-items: center;
         }
-        
-        .nav-links li {
-            margin-left: 2rem;
-            position: relative;
-        }
-        
+
         .nav-links a {
+            color: white;
             text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s;
             position: relative;
-            overflow: hidden;
-            padding: 0.5rem 0;
+            padding: 10px 0;
         }
 
         .nav-links a::before {
@@ -129,28 +108,48 @@
             left: 0;
             width: 0;
             height: 3px;
-            background: var(--gradient-2);
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
             transition: width 0.3s;
-            border-radius: 2px;
         }
-        
+
         .nav-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
+            color: #e74c3c;
+            text-shadow: 0 0 8px rgba(231,76,60,0.8);
         }
 
         .nav-links a:hover::before {
             width: 100%;
         }
-        
-        .hero {
-            height: 100vh;
+
+        .join-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(231,76,60,0.4);
             display: flex;
             align-items: center;
-            background: var(--gradient-1), url('hero-bg.jpg') no-repeat center center/cover;
-            color: var(--light-color);
-            text-align: center;
-            padding-top: 80px;
+            gap: 10px;
+        }
+
+        .join-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(231,76,60,0.6);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(26,26,26,0.9), rgba(44,62,80,0.8)), 
+                        radial-gradient(circle at 70% 30%, rgba(231,76,60,0.3) 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
@@ -158,423 +157,458 @@
         .hero::before {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, transparent 20%, rgba(255,107,53,0.1) 21%, rgba(255,107,53,0.1) 34%, transparent 35%, transparent);
-            background-size: 80px 80px;
-            animation: heroPattern 25s linear infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("/Users/macos/Downloads/pngwing.com.png");
+            animation: heroPattern 30s linear infinite;
         }
 
         @keyframes heroPattern {
-            0% { transform: translate(-80px, -80px) rotate(0deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-60px, -60px); }
         }
-        
+
         .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: heroEnter 2s forwards 0.5s;
             position: relative;
             z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
-        
-        .hero h1 {
+
+        .hero-left {
+            color: white;
+        }
+
+        .hero-tag {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(231,76,60,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(231,76,60,0.4); }
+            50% { box-shadow: 0 4px 25px rgba(231,76,60,0.8); }
+            100% { box-shadow: 0 4px 15px rgba(231,76,60,0.4); }
+        }
+
+        .hero-title {
             font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            font-weight: 800;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #fff, #e74c3c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            font-weight: 300;
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            color: #bdc3c7;
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .student-avatars {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        .student-avatars img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-left: -15px;
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .student-avatars img:first-child {
+            margin-left: 0;
+        }
+
+        .student-info {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
-            justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
         }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--gradient-2);
-            color: var(--light-color);
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s;
+
+        .read-more-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 35px;
             border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255,107,53,0.3);
-            position: relative;
-            overflow: hidden;
-            font-size: 1rem;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transition: all 0.6s;
-            transform: translate(-50%, -50%);
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(255,107,53,0.4);
-        }
-
-        .btn-secondary {
-            background: var(--gradient-3);
-        }
-
-        .stats-section {
-            background: var(--gradient-4);
-            color: var(--light-color);
-            padding: 5rem 5%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 2.5rem;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            border: 2px solid rgba(255,255,255,0.2);
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all 0.8s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .stat-box:hover::before {
-            opacity: 1;
-        }
-
-        .stat-box.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-10px) scale(1.05);
-        }
-
-        .stat-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            font-weight: 500;
+            border-radius: 50px;
+            font-weight: 700;
             text-transform: uppercase;
+            cursor: pointer;
+            font-size: 14px;
             letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(231,76,60,0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+
+        .read-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(231,76,60,0.6);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            border: 2px solid #e74c3c;
+            color: #e74c3c;
+        }
+
+        .secondary-btn:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .hero-right {
             position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .section-title.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .section-title h2 {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-weight: 700;
+        .hero-image-container {
             position: relative;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            box-shadow: 0 20px 60px rgba(231,76,60,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 5px;
-            background: var(--gradient-2);
-            border-radius: 3px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
-        .section-title p {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            padding: 3rem;
-            border-radius: 25px;
-            text-align: center;
-            transition: all 0.5s;
-            transform: translateY(30px);
-            opacity: 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            border: 1px solid rgba(255,107,53,0.1);
+        .hero-image {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: url('pngwing.com.png') center/cover;
+            border: 5px solid rgba(255,255,255,0.2);
             position: relative;
             overflow: hidden;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-2);
-            opacity: 0.05;
-            transition: left 0.5s;
-            z-index: 0;
-        }
-
-        .service-card:hover::before {
-            left: 0;
-        }
-
-        .service-card.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(255,107,53,0.2);
-        }
-
-        .service-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            transition: all 0.4s;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.2) rotate(10deg);
-            color: var(--accent-color);
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-            font-weight: 700;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-color);
-            position: relative;
-            z-index: 1;
-        }
-
-        .features-section {
-            background: var(--gradient-1);
-            color: var(--light-color);
-            padding: 8rem 5%;
-            position: relative;
-        }
-
-        .features-section::before {
+        .hero-image::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            position: relative;
-            z-index: 2;
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
-        .feature-box {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(15px);
-            padding: 3rem;
-            border-radius: 25px;
-            border: 2px solid rgba(255,255,255,0.2);
-            text-align: center;
-            transition: all 0.5s;
-            transform: translateY(40px);
-            opacity: 0;
-        }
-
-        .feature-box.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-15px) scale(1.05);
-            background: rgba(255,255,255,0.2);
-        }
-
-        .feature-box i {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-        }
-
-        .feature-box h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .gallery-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 8rem 5%;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .section {
+            padding: 100px 5%;
             max-width: 1400px;
             margin: 0 auto;
+            position: relative;
         }
 
-        .gallery-item {
-            background: white;
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(231,76,60,0.3);
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #fff, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #bdc3c7;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .staff-card {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            transition: all 0.5s;
-            transform: translateY(30px);
-            opacity: 0;
-        }
-
-        .gallery-item.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-
-        .gallery-content {
-            padding: 2.5rem;
+            padding: 40px;
             text-align: center;
-        }
-
-        .gallery-content i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .gallery-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-
-        .cta-section {
-            background: var(--gradient-2);
-            color: var(--light-color);
-            text-align: center;
-            padding: 8rem 2rem;
-            border-radius: 30px;
-            margin: 4rem 5%;
+            transition: all 0.4s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(231,76,60,0.2);
             position: relative;
             overflow: hidden;
         }
 
-        .cta-section::before {
+        .staff-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(231,76,60,0.1), transparent);
+            transform: rotate(-45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+
+        .staff-card:hover::before {
+            opacity: 1;
+            animation: cardShine 0.6s;
+        }
+
+        @keyframes cardShine {
+            0% { transform: translateX(-100%) rotate(-45deg); }
+            100% { transform: translateX(100%) rotate(-45deg); }
+        }
+
+        .staff-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(231,76,60,0.3);
+        }
+
+        .staff-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(231,76,60,0.4);
+        }
+
+        .staff-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .staff-title {
+            font-size: 1rem;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .staff-description {
+            font-size: 14px;
+            color: #bdc3c7;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(231,76,60,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(231,76,60,0.3);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            color: #e74c3c;
+            margin-bottom: 25px;
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: #f39c12;
+        }
+
+        .service-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: #bdc3c7;
+            line-height: 1.7;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .program-card {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(231,76,60,0.2);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(231,76,60,0.3);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .program-price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .program-name {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .program-features {
+            padding: 30px;
+        }
+
+        .program-features ul {
+            list-style: none;
+        }
+
+        .program-features li {
+            padding: 12px 0;
+            color: #bdc3c7;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .program-features li:last-child {
+            border-bottom: none;
+        }
+
+        .program-features i {
+            color: #e74c3c;
+            width: 16px;
+        }
+
+        .transportation-section {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .transportation-section::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -582,542 +616,644 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px);
-            background-size: 40px 40px;
-            animation: ctaPattern 30s linear infinite;
+            background-size: 50px 50px;
+            animation: transportPattern 25s linear infinite;
         }
 
-        @keyframes ctaPattern {
+        @keyframes transportPattern {
             0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(-40px, -40px) rotate(360deg); }
+            100% { transform: translate(-50px, -50px) rotate(360deg); }
         }
 
-        .cta-section h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
+        .transportation-content {
             position: relative;
             z-index: 2;
         }
 
-        .cta-section p {
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
+        .transportation-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .transportation-description {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 35px;
+            line-height: 1.8;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .transport-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .transport-feature {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .transport-feature i {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .transport-feature h4 {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .transport-feature p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 30px;
+            padding: 80px 60px;
             position: relative;
-            z-index: 2;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fff, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #bdc3c7;
             line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .about-stat {
+            text-align: center;
+        }
+
+        .about-stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #e74c3c;
+            display: block;
+        }
+
+        .about-stat-label {
+            font-size: 14px;
+            color: #bdc3c7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 0 20px 40px rgba(231,76,60,0.3);
         }
 
         .contact-section {
-            background: white;
-            padding: 8rem 5%;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            margin: 60px 0;
         }
 
         .contact-form {
-            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-            padding: 4rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s;
-            border: 1px solid rgba(255,107,53,0.1);
-        }
-
-        .contact-form.animate {
-            opacity: 1;
-            transform: translateY(0);
+            margin-top: 40px;
         }
 
         .form-group {
-            margin-bottom: 2.5rem;
-            position: relative;
+            margin-bottom: 25px;
+            text-align: left;
         }
 
         .form-group label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            display: block;
+            color: white;
             font-weight: 600;
-            color: var(--secondary-color);
-            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 1.2rem 1.5rem;
-            border: 2px solid #e1e5e9;
-            border-radius: 15px;
-            font-size: 1rem;
+            padding: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 14px;
             transition: all 0.3s;
-            background: #fafbfc;
-            font-family: 'Poppins', sans-serif;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
-            background: white;
-            box-shadow: 0 0 20px rgba(255,107,53,0.1);
-            transform: translateY(-2px);
+            border-color: #e74c3c;
+            background: rgba(255,255,255,0.2);
         }
 
         .form-group textarea {
-            height: 150px;
+            height: 120px;
             resize: vertical;
         }
 
-        footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: var(--light-color);
-            padding: 5rem 5% 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-2);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links li {
-            margin: 0 2rem;
-        }
-
-        .footer-links a {
-            color: var(--light-color);
-            text-decoration: none;
+        .submit-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 1px;
             transition: all 0.3s;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            box-shadow: 0 6px 20px rgba(231,76,60,0.4);
         }
 
-        .footer-links a:hover {
-            color: #ff6b35;
+        .submit-btn:hover {
             transform: translateY(-3px);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 3rem;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--light-color);
-            font-size: 2rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-links a:hover {
-            color: #ff6b35;
-            transform: translateY(-5px) scale(1.1);
-            background: rgba(255,107,53,0.2);
-        }
-
-        .copyright {
-            margin-top: 3rem;
-            font-size: 1rem;
-            opacity: 0.8;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        @keyframes heroEnter {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            box-shadow: 0 10px 30px rgba(231,76,60,0.6);
         }
 
         @media (max-width: 768px) {
-            .navbar {
+            .top-bar {
                 flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
+                gap: 10px;
+                text-align: center;
+                padding: 15px 5%;
+            }
+
+            .top-bar-right {
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 20px 5%;
             }
 
             .nav-links {
-                margin-top: 1rem;
-            }
-
-            .nav-links li {
-                margin: 0 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .hero-buttons {
                 flex-direction: column;
-                align-items: center;
+                gap: 20px;
             }
 
-            .section-title h2 {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-title {
                 font-size: 2.5rem;
             }
 
+            .hero-image-container {
+                width: 350px;
+                height: 350px;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .staff-grid,
             .services-grid,
-            .features-grid,
-            .gallery-grid,
-            .stats-container {
+            .programs-grid,
+            .transport-features {
                 grid-template-columns: 1fr;
             }
 
-            .cta-section h2 {
-                font-size: 2.5rem;
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
 
-            .cta-section p {
-                font-size: 1.1rem;
+            .hero-stats {
+                justify-content: center;
             }
 
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            .transportation-section,
+            .about-section,
+            .contact-section {
+                padding: 50px 30px;
             }
 
-            .social-links {
-                gap: 1rem;
+            .transportation-title {
+                font-size: 2rem;
             }
 
-            .contact-form {
-                padding: 2rem;
+            .about-text h3 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="floating-elements">
-        <i class="floating-icon fas fa-dumbbell"></i>
-        <i class="floating-icon fas fa-running"></i>
-        <i class="floating-icon fas fa-basketball-ball"></i>
-        <i class="floating-icon fas fa-gamepad"></i>
-        <i class="floating-icon fas fa-music"></i>
-        <i class="floating-icon fas fa-trophy"></i>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            Witness the BIGGEST SHOWDOWN in the history! Matt vs Robbie, tickets available for sale
+        </div>
+        <div class="top-bar-right">
+            <span>GET 20% OFF ON SELECTED ITEMS | SHOP NOW</span>
+            <a href="mailto:contact@example.com">
+                <i class="fas fa-envelope"></i> contact@example.com
+            </a>
+        </div>
     </div>
 
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="IMG_0991-removebg-preview.png" alt="Sports Center Logo">
-                
-            </div>
+        <div class="logo">
+            <img src="IMG_0991-removebg-preview.png" alt="Boxing Academy Logo">
+        </div>
+        <nav>
             <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#services"><i class="fas fa-star"></i> Activities</a></li>
-                <li><a href="#features"><i class="fas fa-trophy"></i> Features</a></li>
-                <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#programs">PROGRAMS</a></li>
+                <li><a href="#staff">STAFF</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
             </ul>
         </nav>
+        <button class="join-btn">
+            <i class="fas fa-arrow-right"></i> JOIN MEMBERSHIP
+        </button>
     </header>
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1><i class="fas fa-fire"></i> Ultimate Sports & Recreation Center</h1>
-            <p>Dance, Box, Play, and Have Fun - All Under One Roof!</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn">
-                    <i class="fas fa-rocket"></i> Explore Activities
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-phone"></i> Join Today
-                </a>
+            <div class="hero-left">
+                <div class="hero-tag">
+                    JOIN OVER 4300 STUDENTS
+                </div>
+                <h1 class="hero-title">Punch Your Way to Victory: Boxing Classes & Matches</h1>
+                <p class="hero-description">
+                    Train with the best coaches, learn professional techniques, and transform your body and mind through the art of boxing. Join our elite boxing academy and unleash your inner champion.
+                </p>
+                <div class="hero-stats">
+                    <div class="student-avatars">
+                        <img src="pngwing.com.png" alt="Student">
+                        <img src="pngwing.com.png" alt="Student">
+                        <img src="pngwing.com.png" alt="Student">
+                    </div>
+                    <div class="student-info">
+                        <strong>Join over 4000+ students</strong>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="read-more-btn">
+                        <i class="fas fa-arrow-right"></i> READ MORE
+                    </button>
+                    <button class="read-more-btn secondary-btn">
+                        <i class="fas fa-phone"></i> CALL NOW
+                    </button>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-image-container">
+                    <div class="hero-image"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fas fa-users"></i>
+    <section class="section" id="staff">
+        <div class="section-header">
+            <div class="section-tag">MEET OUR TEAM</div>
+            <h2 class="section-title">INTRODUCTION OF STAFF</h2>
+            <p class="section-description">
+                Our world-class coaching team brings decades of professional boxing experience to help you achieve your goals.
+            </p>
+        </div>
+        <div class="staff-grid">
+            <div class="staff-card">
+                <div class="staff-image">
+                    <i class="fas fa-user-tie"></i>
                 </div>
-                <div class="stat-number" data-target="5000">0</div>
-                <div class="stat-label">Happy Members</div>
+                <h3 class="staff-name">Mike Johnson</h3>
+                <div class="staff-title">Head Boxing Coach</div>
+                <p class="staff-description">
+                    Former professional boxer with 15 years of experience. Specializes in technique development and competitive training.
+                </p>
             </div>
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fas fa-dumbbell"></i>
+            <div class="staff-card">
+                <div class="staff-image">
+                    <i class="fas fa-fist-raised"></i>
                 </div>
-                <div class="stat-number" data-target="50">0</div>
-                <div class="stat-label">Activities</div>
+                <h3 class="staff-name">Sarah Wilson</h3>
+                <div class="staff-title">Fitness Trainer</div>
+                <p class="staff-description">
+                    Certified fitness expert focusing on strength and conditioning. Creates personalized workout programs for all levels.
+                </p>
             </div>
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fas fa-building"></i>
+            <div class="staff-card">
+                <div class="staff-image">
+                    <i class="fas fa-medal"></i>
                 </div>
-                <div class="stat-number" data-target="3">0</div>
-                <div class="stat-label">Floors</div>
+                <h3 class="staff-name">Tony Martinez</h3>
+                <div class="staff-title">Youth Coach</div>
+                <p class="staff-description">
+                    Specializes in youth development and beginner training. Patient and encouraging approach to teaching fundamentals.
+                </p>
             </div>
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fas fa-clock"></i>
+            <div class="staff-card">
+                <div class="staff-image">
+                    <i class="fas fa-user-md"></i>
                 </div>
-                <div class="stat-number" data-target="24">0</div>
-                <div class="stat-label">Hours Open</div>
+                <h3 class="staff-name">Dr. Lisa Chen</h3>
+                <div class="staff-title">Sports Medicine</div>
+                <p class="staff-description">
+                    Licensed sports medicine physician ensuring safe training practices and injury prevention for all athletes.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <div class="section-title">
-            <h2><i class="fas fa-star"></i> Our Amazing Activities</h2>
-            <p>Experience the ultimate in fitness, fun, and entertainment with our diverse range of activities</p>
+    <section class="section" id="services">
+        <div class="section-header">
+            <div class="section-tag">WHAT WE OFFER</div>
+            <h2 class="section-title">SERVICES WE PROVIDE</h2>
+            <p class="section-description">
+                Comprehensive boxing services designed to meet your fitness and competitive goals at every level.
+            </p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-music"></i>
-                </div>
-                <h3>Dance Studio</h3>
-                <p>Join our energetic dance team! Learn hip-hop, contemporary, salsa, and more. Professional instructors guide you through choreography that'll make you move like a pro. Perfect for all skill levels from beginners to advanced dancers.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
                     <i class="fas fa-fist-raised"></i>
                 </div>
-                <h3>Boxing Arena</h3>
-                <p>Step into our state-of-the-art boxing facility! Train with certified coaches, improve your technique, and get in the best shape of your life. Heavy bags, speed bags, and full ring available for sparring sessions.</p>
+                <h3 class="service-name">Professional Boxing Training</h3>
+                <p class="service-description">
+                    Learn proper techniques, footwork, and combinations from certified professional coaches with years of ring experience.
+                </p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-running"></i>
+                    <i class="fas fa-dumbbell"></i>
                 </div>
-                <h3>Sports Complex</h3>
-                <p>Multi-purpose courts for basketball, volleyball, badminton, and more! Join leagues, participate in tournaments, or just have fun with friends. Professional-grade equipment and facilities await you.</p>
+                <h3 class="service-name">Fitness Boxing</h3>
+                <p class="service-description">
+                    High-intensity cardio workouts using boxing techniques to improve strength, endurance, and overall fitness levels.
+                </p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-gamepad"></i>
+                    <i class="fas fa-child"></i>
                 </div>
-                <h3>Game Room Floor 1</h3>
-                <p>Classic arcade games, pinball machines, air hockey, pool tables, and vintage consoles! Relive your childhood or discover retro gaming. Perfect for parties, dates, or just unwinding after a workout.</p>
+                <h3 class="service-name">Youth Programs</h3>
+                <p class="service-description">
+                    Safe and fun boxing programs for kids and teenagers focusing on discipline, confidence, and physical development.
+                </p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-vr-cardboard"></i>
+                    <i class="fas fa-trophy"></i>
                 </div>
-                <h3>Game Room Floor 2</h3>
-                <p>Next-generation gaming experience! VR stations, latest console games, racing simulators, and high-tech entertainment. Compete in esports tournaments or explore virtual worlds with cutting-edge technology.</p>
+                <h3 class="service-name">Competition Training</h3>
+                <p class="service-description">
+                    Advanced training for amateur and professional competitions with personalized coaching and strategy development.
+                </p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-swimmer"></i>
+                    <i class="fas fa-users"></i>
                 </div>
-                <h3>Recreation Zone</h3>
-                <p>Relax and socialize in our recreation areas! Lounge spaces, cafeteria, smoothie bar, and wellness corner. Take a break between activities and connect with fellow members in a comfortable environment.</p>
+                <h3 class="service-name">Group Classes</h3>
+                <p class="service-description">
+                    Motivating group sessions that combine technique training with high-energy workouts in a supportive environment.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="service-name">Personal Training</h3>
+                <p class="service-description">
+                    One-on-one coaching sessions tailored to your specific goals, skill level, and fitness requirements.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="features-section" id="features">
-        <div class="section-title">
-            <h2><i class="fas fa-trophy"></i> Why Choose Us</h2>
-            <p>Discover what makes our sports and recreation center the ultimate destination for fitness and fun</p>
+    <section class="section" id="programs">
+        <div class="section-header">
+            <div class="section-tag">CHOOSE YOUR PATH</div>
+            <h2 class="section-title">PROGRAMS</h2>
+            <p class="section-description">
+                Flexible membership programs designed to fit your schedule, budget, and boxing goals.
+            </p>
         </div>
-        <div class="features-grid">
-            <div class="feature-box">
-                <i class="fas fa-medal"></i>
-                <h3>Professional Trainers</h3>
-                <p>Certified instructors and coaches in every discipline to help you reach your goals</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-tools"></i>
-                <h3>Top Equipment</h3>
-                <p>State-of-the-art facilities and equipment maintained to the highest standards</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-users-cog"></i>
-                <h3>Community Spirit</h3>
-                <p>Join a vibrant community of fitness enthusiasts and make lasting friendships</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-clock"></i>
-                <h3>Flexible Hours</h3>
-                <p>24/7 access for members with extended hours to fit your busy lifestyle</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-heart"></i>
-                <h3>All Ages Welcome</h3>
-                <p>Programs and activities designed for kids, teens, adults, and seniors</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-dollar-sign"></i>
-                <h3>Affordable Rates</h3>
-                <p>Competitive membership plans and flexible payment options for everyone</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery-section" id="gallery">
-        <div class="section-title">
-            <h2><i class="fas fa-images"></i> Experience Our Facilities</h2>
-            <p>Take a virtual tour of our amazing spaces and see what awaits you</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <i class="fas fa-music"></i>
-                    <h3>Dance Studios</h3>
-                    <p>Spacious mirrored studios with professional sound systems and sprung floors for optimal performance and safety.</p>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-header">
+                    <div class="program-price">$49<span style="font-size: 1rem;">/month</span></div>
+                    <div class="program-name">Basic Program</div>
+                </div>
+                <div class="program-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 2 Group Classes per week</li>
+                        <li><i class="fas fa-check"></i> Access to gym equipment</li>
+                        <li><i class="fas fa-check"></i> Basic technique training</li>
+                        <li><i class="fas fa-check"></i> Fitness assessment</li>
+                        <li><i class="fas fa-check"></i> Locker room access</li>
+                    </ul>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <i class="fas fa-boxing-glove"></i>
-                    <h3>Boxing Ring</h3>
-                    <p>Regulation-size boxing ring with professional lighting, heavy bags, speed bags, and training equipment.</p>
+            <div class="program-card">
+                <div class="program-header">
+                    <div class="program-price">$89<span style="font-size: 1rem;">/month</span></div>
+                    <div class="program-name">Premium Program</div>
+                </div>
+                <div class="program-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited group classes</li>
+                        <li><i class="fas fa-check"></i> 2 Personal training sessions</li>
+                        <li><i class="fas fa-check"></i> Advanced technique training</li>
+                        <li><i class="fas fa-check"></i> Nutrition consultation</li>
+                        <li><i class="fas fa-check"></i> Competition preparation</li>
+                    </ul>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <i class="fas fa-basketball-ball"></i>
-                    <h3>Sports Courts</h3>
-                    <p>Full-size basketball court that converts to volleyball, badminton, and other sports with premium flooring.</p>
+            <div class="program-card">
+                <div class="program-header">
+                    <div class="program-price">$149<span style="font-size: 1rem;">/month</span></div>
+                    <div class="program-name">Elite Program</div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <i class="fas fa-ghost"></i>
-                    <h3>Retro Game Floor</h3>
-                    <p>Nostalgic arcade experience with classic games, pinball machines, and vintage gaming consoles.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <i class="fas fa-robot"></i>
-                    <h3>Modern Game Floor</h3>
-                    <p>Cutting-edge gaming with VR stations, latest consoles, racing simulators, and esports setup.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-content">
-                    <i class="fas fa-coffee"></i>
-                    <h3>Recreation Lounge</h3>
-                    <p>Comfortable relaxation areas with refreshments, WiFi, and spaces to socialize and unwind.</p>
+                <div class="program-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited access to all facilities</li>
+                        <li><i class="fas fa-check"></i> Weekly personal training</li>
+                        <li><i class="fas fa-check"></i> Professional sparring sessions</li>
+                        <li><i class="fas fa-check"></i> Meal planning and supplements</li>
+                        <li><i class="fas fa-check"></i> Priority booking for events</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
-        <h2><i class="fas fa-rocket"></i> Ready to Start Your Journey?</h2>
-        <p>Join thousands of members who have transformed their lives through fitness, fun, and friendship. Whether you want to dance like a star, fight like a champion, or game like a pro - we've got everything you need under one roof!</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn">
-                <i class="fas fa-user-plus"></i> Become a Member
-            </a>
-            <a href="tel:+1234567890" class="btn btn-secondary">
-                <i class="fas fa-phone-alt"></i> Call Now
-            </a>
+    <section class="transportation-section">
+        <div class="transportation-content">
+            <h2 class="transportation-title">WE ALSO PROVIDE TRANSPORTATION</h2>
+            <p class="transportation-description">
+                Convenient pickup and drop-off services to make your boxing journey even easier. We cover major areas in the city with safe, reliable transportation.
+            </p>
+            <div class="transport-features">
+                <div class="transport-feature">
+                    <i class="fas fa-bus"></i>
+                    <h4>Daily Shuttle Service</h4>
+                    <p>Regular scheduled pickups from major neighborhoods and transit hubs throughout the day.</p>
+                </div>
+                <div class="transport-feature">
+                    <i class="fas fa-clock"></i>
+                    <h4>Flexible Timing</h4>
+                    <p>Multiple departure times to accommodate your training schedule and personal commitments.</p>
+                </div>
+                <div class="transport-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safe & Secure</h4>
+                    <p>Professional drivers and well-maintained vehicles ensure your safety and comfort.</p>
+                </div>
+                <div class="transport-feature">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Affordable Rates</h4>
+                    <p>Competitive pricing with special discounts for monthly members and group bookings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>ABOUT US</h3>
+                <p>
+                    Established in 2010, our boxing academy has been the premier destination for boxing enthusiasts of all levels. We combine traditional boxing techniques with modern training methods to create champions both inside and outside the ring.
+                </p>
+                <p>
+                    Our mission is to build confidence, discipline, and physical fitness through the art of boxing. Whether you're looking to compete professionally or simply stay in shape, we provide the expertise and support you need to succeed.
+                </p>
+                <p>
+                    With state-of-the-art facilities, experienced coaches, and a supportive community, we've helped thousands of students achieve their goals and transform their lives through boxing.
+                </p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <span class="about-stat-number">4000+</span>
+                        <span class="about-stat-label">Students Trained</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-number">15</span>
+                        <span class="about-stat-label">Years Experience</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-number">50+</span>
+                        <span class="about-stat-label">Championships Won</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="about-stat-number">24/7</span>
+                        <span class="about-stat-label">Support Available</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <i class="fas fa-boxing-glove"></i>
+            </div>
         </div>
     </section>
 
     <section class="contact-section" id="contact">
-        <div class="section-title">
-            <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
-            <p>Ready to join our amazing community? Contact us today and let's get you started!</p>
+        <div class="section-header">
+            <div class="section-tag">GET IN TOUCH</div>
+            <h2 class="section-title">CONTACT US</h2>
+            <p class="section-description" style="color: #bdc3c7;">
+                Ready to start your boxing journey? Get in touch with us today and take the first step towards becoming a champion.
+            </p>
         </div>
         <form class="contact-form">
             <div class="form-group">
-                <label for="name"><i class="fas fa-user"></i> Full Name</label>
-                <input type="text" id="name" required placeholder="Enter your full name">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
-                <input type="email" id="email" required placeholder="Enter your email">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
-                <input type="tel" id="phone" placeholder="Enter your phone number">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group">
-                <label for="interests"><i class="fas fa-heart"></i> What interests you most?</label>
-                <input type="text" id="interests" placeholder="Dance, Boxing, Sports, Gaming, etc.">
+                <label for="program">Interested Program</label>
+                <input type="text" id="program" name="program" placeholder="Basic, Premium, or Elite">
             </div>
             <div class="form-group">
-                <label for="message"><i class="fas fa-comment"></i> Message</label>
-                <textarea id="message" placeholder="Tell us about your fitness goals or ask any questions..."></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your goals and any questions you have..."></textarea>
             </div>
-            <button type="submit" class="btn">
-                <i class="fas fa-paper-plane"></i> Send Message
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> SEND MESSAGE
             </button>
         </form>
     </section>
-
-    <footer>
-        <div class="footer-content">
-            <ul class="footer-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#services"><i class="fas fa-star"></i> Activities</a></li>
-                <li><a href="#features"><i class="fas fa-trophy"></i> Features</a></li>
-                <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy</a></li>
-            </ul>
-            
-            <ul class="social-links">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
-            </ul>
-            
-            <div class="copyright">
-                <i class="fas fa-copyright"></i> 2025 Ultimate Sports & Recreation Center. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff6b35;"></i> for our amazing community!
-            </div>
-        </div>
-    </footer>
 
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1133,6 +1269,42 @@
             });
         });
 
+        document.querySelector('.join-btn').addEventListener('click', function() {
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelectorAll('.read-more-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.textContent.includes('READ MORE')) {
+                    document.querySelector('#services').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else if (this.textContent.includes('CALL NOW')) {
+                    window.open('tel:+1234567890');
+                }
+            });
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> SENDING...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> MESSAGE SENT!';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    this.reset();
+                    alert('Thank you for your message! We will contact you soon to discuss your boxing journey.');
+                }, 2000);
+            }, 1500);
+        });
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1141,114 +1313,29 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    
-                    if (entry.target.classList.contains('stat-box')) {
-                        animateCounter(entry.target);
-                    }
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.section-title, .service-card, .contact-form, .feature-box, .gallery-item, .stat-box').forEach(el => {
-            observer.observe(el);
+        document.querySelectorAll('.staff-card, .service-card, .program-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
         });
 
-        function animateCounter(element) {
-            const target = parseInt(element.querySelector('.stat-number').getAttribute('data-target'));
-            const counter = element.querySelector('.stat-number');
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                counter.textContent = Math.floor(current);
-                if (target === 24) counter.textContent += '';
-            }, 20);
-        }
-
-        let headerScrolled = false;
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100 && !headerScrolled) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.backdropFilter = 'blur(25px)';
-                header.style.boxShadow = '0 8px 50px rgba(0, 0, 0, 0.15)';
-                headerScrolled = true;
-            } else if (window.scrollY <= 100 && headerScrolled) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(20px)';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
-                headerScrolled = false;
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(44,62,80,0.95), rgba(52,73,94,0.95))';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c3e50, #34495e)';
+                header.style.backdropFilter = 'none';
             }
         });
-
-        const contactForm = document.querySelector('.contact-form');
-        if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const button = this.querySelector('.btn');
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                button.disabled = true;
-                
-                setTimeout(() => {
-                    button.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                    button.style.background = 'var(--gradient-4)';
-                    setTimeout(() => {
-                        button.innerHTML = originalText;
-                        button.style.background = 'var(--gradient-2)';
-                        button.disabled = false;
-                        this.reset();
-                        alert('Thanks for your message! We\'ll get back to you soon and help you start your fitness journey!');
-                    }, 2500);
-                }, 1500);
-            });
-        }
-
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.05)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.2}s`;
-        });
-
-        document.querySelectorAll('.feature-box').forEach((box, index) => {
-            box.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.15}s`;
-        });
-
-        window.addEventListener('load', () => {
-            document.body.style.transition = 'opacity 0.5s';
-            document.body.style.opacity = '1';
-        });
-
-        setInterval(() => {
-            const colors = ['#ff6b35', '#f39c12', '#e74c3c', '#9b59b6', '#3498db'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.querySelectorAll('.floating-icon').forEach(icon => {
-                if (Math.random() > 0.8) {
-                    icon.style.color = randomColor;
-                    setTimeout(() => {
-                        icon.style.color = 'var(--primary-color)';
-                    }, 1000);
-                }
-            });
-        }, 3000);
     </script>
 </body>
 </html>
